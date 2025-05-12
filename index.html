@@ -37,6 +37,9 @@ Select ONE Additional Feature to Add
       <button type="submit">Check color Answer</button>
     </form>
     <div id="color-result"></div>
+    <div id="pink">
+    
+    </div>
     <hr />
     <!-- Book Question -->
     <form id="icecream-form">
@@ -60,6 +63,11 @@ Select ONE Additional Feature to Add
 
         var $answer = $("#color-answer");
         var answer = $answer.val();
+        var $img = $("<img>");
+        $img.width(100);
+        $img.attr("src", Images[answer]);
+        $img.appendTo("#pink");
+        
 
         if (answer === "color1") {
           $("#color-result").text("YESSSS!");
@@ -71,8 +79,16 @@ Select ONE Additional Feature to Add
       //Book Question jQuery Code
       
       var Images = {
-        vanilla:
-        "https://image.similarpng.com/file/similarpng/very-thumbnail/2022/02/Ice-crean-vanilla-on-transparent-background-PNG.png"
+        icecream1:
+        "https://image.similarpng.com/file/similarpng/very-thumbnail/2022/02/Ice-crean-vanilla-on-transparent-background-PNG.png",
+        
+        icecream2: "https://img.freepik.com/free-psd/delicious-pink-strawberry-ice-cream-cone_191095-78235.jpg?semt=ais_hybrid&w=740",
+        
+        icecream3: "https://static.vecteezy.com/system/resources/thumbnails/030/809/331/small_2x/chocolate-ice-cream-no-background-png.png",
+        
+        icecream4: "https://d2bzx2vuetkzse.cloudfront.net/unshoppable_producs/f2ea8a9f-aeba-4d72-a205-4564684677cd.png",
+        
+        color1: "https://i.pinimg.com/736x/9f/22/fb/9f22fbf6a89ffc758c8aa813e849e11a.jpg",
         
       };
       
