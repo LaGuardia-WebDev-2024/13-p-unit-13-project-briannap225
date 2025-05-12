@@ -24,61 +24,75 @@ Select ONE Additional Feature to Add
     <h1>Quiz About [Me]</h1>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="color-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+         🎨  What is my favorite color?
+        <select id="color-answer">
+          <option value="color1">pink</option>
+          <option value="color2">blue</option>
+          <option value="color3">green</option>
+          <option value="color4">purple</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check color Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="color-result"></div>
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="icecream-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        🍦 What is my favorite icecream flavor?
+        <select id="icecream-answer">
+          <option value="icecream1">vanilla</option>
+          <option value="icecream2">strawberry</option>
+          <option value="icecream3">chocolate</option>
+          <option value="icecream4">mint</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="icecream-result"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#color-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#color-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "color1") {
+          $("#color-result").text("YESSSS!");
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#color-result").text("Try Again!");
         }
       });
 
       //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      
+      var Images = {
+        vanilla:
+        "https://image.similarpng.com/file/similarpng/very-thumbnail/2022/02/Ice-crean-vanilla-on-transparent-background-PNG.png"
+        
+      };
+      
+      $("#icecream-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#icecream-answer");
         var answer = $answer.val();
+        // var $icecreamType = $(this).find("[name=type]");
+        // var icecreamType = $icecreamType.val();
+        var $img = $("<img>");
+        $img.width(100);
+        $img.attr("src", Images[answer]);
+        $img.appendTo("body");
+    
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "icecream3") {
+          $("#icecream-result").text("YESSSS!");
         } else {
-          $("#book-result").text("Try Again!");
+          $("#icecream-result").text("Try Again!");
         }
       });
     </script>
